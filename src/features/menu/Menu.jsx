@@ -51,15 +51,17 @@ export default function Menu() {
               const quantity = itemInCart ? itemInCart.quantity : 1;
               return (
                 <MenuItem key={menu.id}>
-                  <Link
-                    to={`/order/${menu.id}`}
+                  <div
                     className="flex  items-center gap-4 py-2"
                   >
+                    <Link to={`/order/${menu.id}`}
+>
                     <img
                       src={menu.image_url}
                       alt={menu.title}
                       className="block h-[8rem] w-[8rem] rounded "
                     />
+                    </Link>
                     <IngredientsInfo
                       id={menu.id}
                       title={menu.title}
@@ -75,7 +77,7 @@ export default function Menu() {
                         add to cart
                       </Button>
                     )}
-                  </Link>
+                  </div>
                 </MenuItem>
               );
             })}
