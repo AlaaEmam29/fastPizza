@@ -6,7 +6,7 @@ export const getMenu = async (query = 'pasta') => {
   if (query === '') return;
   try {
     const { data } = await axios.get(
-      `${API_URL}?search=${query}&key=${import.meta.env.VITE_REACT_APP_API_KEY}
+      `${API_URL}?search=${query}&key=ff217a7a-3414-40c7-af03-efae6574b82a
     `
     );
 
@@ -25,7 +25,7 @@ export const getMenu = async (query = 'pasta') => {
 export const getIngredientsInfo = async (id) => {
   try {
     const { data } = await axios.get(
-      `${API_URL}/${id}?key=${import.meta.env.VITE_REACT_APP_API_KEY}`
+      `${API_URL}/${id}?key=ff217a7a-3414-40c7-af03-efae6574b82a`
     );
     const { recipe } = data.data;
     if (recipe.price) {
@@ -77,7 +77,7 @@ export const createNewOrder = async (data) => {
     const {
       data: { data },
     } = await axios.post(
-      `${API_URL}?key=${import.meta.env.VITE_REACT_APP_API_KEY}`,
+      `${API_URL}?key=ff217a7a-3414-40c7-af03-efae6574b82a`,
       order
     );
     const { recipe } = data;
